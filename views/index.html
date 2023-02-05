@@ -1,0 +1,15 @@
+{{ template "layout" .}}
+{{ define "main" }}
+
+{{ range .}}
+<div class="text">
+    Product Name: {{ .Name }} <br>
+    Product Price: {{ .Price }} <br>
+    {{ if lt .Stock 30 }}
+    <span style="color: red;">Product Stock Low</span> <br>
+    {{ end }}
+    Stock: {{ .Stock }} <br><br>
+</div>
+{{ end }}
+
+{{ end }}
